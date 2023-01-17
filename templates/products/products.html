@@ -1,0 +1,10 @@
+{% extends 'layouts/index.html' %}
+{% block content %}
+    <div class="products">
+        {% for product in products %}
+            <div>{{ product.title }}</div>
+        {% endfor %}
+    </div>
+
+
+{% endblock %}
