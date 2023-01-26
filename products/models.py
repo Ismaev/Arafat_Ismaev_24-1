@@ -14,6 +14,16 @@ class Review(models.Model):
     describes = models.TextField()
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
 
+class Category(models.Model):
+    title = models.TextField()
+    description = models.TextField()
+    image = models.ImageField(null=True, blank=True)
+
+
+
+
+
+
 
 
 

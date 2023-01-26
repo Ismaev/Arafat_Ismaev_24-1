@@ -1,6 +1,6 @@
 
 from django.shortcuts import render
-from products.models import Product, Review
+from products.models import Product, Review, Category
 # Create your views here.
 
 
@@ -29,5 +29,17 @@ def product_detail_view(request, id):
             'comment': reviews
         }
 
-        return render(request, 'products/detail.html', context=context)
+        return render(request, 'products/categories.html', context=context)
 
+def categories(request, id):
+    if request.method == 'GET':
+        product = Product.objects.all()
+        reviews = Review.objects.filter(product=product.obj)
+        categories = Category.objects.filter(product=product.obj)
+
+        context = {
+            'product': product,
+            'description': reviews,
+            'category': categories
+        }
+        return render(request, )
